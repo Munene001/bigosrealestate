@@ -1,3 +1,16 @@
+<script>
+import Contactcrown from "../components/Contactcrown.vue";
+import Upperfoot from "../components/Upperfoot.vue";
+
+export default {
+    components:{
+        Contactcrown,
+        Upperfoot,
+        
+    },
+};
+</script>
 <template>
-<div>Hello</div>
+<Contactcrown/>
+<Upperfoot/>
 </template>
