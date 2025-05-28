@@ -18,7 +18,7 @@
         </button>
         <div
           v-if="isVisible"
-          class="flex flex-col gap-2 text-sm pl-2 absolute w-[150px] mt-[10px]   bg-white p-0"
+          class="flex flex-col gap-2 text-sm pl-2 absolute w-[150px] mt-[10px]"
         >
           <router-link
             to="/buyorrent/buy"
