@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[87px] flex-row md:flex hidden absolute w-full">
+  <div class="h-[87px] flex-row md:flex hidden w-full bg-[#130e0e]">
     <div class="flex w-[18%] items-center justify-center">Hello</div>
     <div class="w-[82%] flex items-center justify-around bg-transparent">
       <router-link
@@ -63,7 +63,7 @@
 
   
   <div
-    class="flex flex-row max-w-[768px] md:hidden h-[80px] justify-between items-center px-4 box-border absolute w-full"
+    class="flex flex-row max-w-[768px] md:hidden h-[80px] justify-between items-center px-4 box-border bg-[#130e0e] w-full"
   >
     <div>logo</div>
     <button @click="togglePopup">

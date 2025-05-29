@@ -1,21 +1,21 @@
 <template>
   <div
-    class="h-[50vh] md:grid bg-[#130e0e] md:h-[100vh] pt-[150px] md:grid-cols-2 px-[100px]"
+    class="flex flex-col justify-center gap-[40px] bg-[#130e0e] h-[100vh] md:py-[100px] md:grid md:grid-cols-2 md:px-[100px]"
   >
-    <div class="md:flex md:flex-col md:gap-[20px] md:justify-center">
+    <div class="flex flex-col  px-[30px] md:flex md:text-left  md:mt-[0] md:flex-col md:gap-[20px] md:justify-center">
       <div
         class=" text-[40px] font-[Montserrat, sans-serif] md:text-[89px] font-black md:leading-[84px] text-white"
       >
         CONTACT<br />US
       </div>
       <div
-        class="text-[25px] font-normal text-white leading-[38px] font-[Montserrat,sans-serif]"
+        class=" text-[20px] md:text-[25px] font-normal text-white leading-[38px] font-[Montserrat,sans-serif]"
       >
         Get in touch with our experts
       </div>
     </div>
-    <div class="flex items-center justify-center">
-      <div class="flex flex-col bg-white py-[10px] px-[20px] gap-[15px]">
+    <div class="  flex w-[full] p-[30px] mb-[20px] md:w-[100%] md:flex items-center md:p-[10px] ">
+      <div class="flex flex-col rounded-2xl bg-white py-[10px] px-[20px] gap-[15px]">
         <div class="font-[Montserrat] text-[24px] leading-[31px] font-bold">
           Our Address
         </div>
