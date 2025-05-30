@@ -9,7 +9,7 @@ module.exports = {
 
         },
         animation: {
-          'glide-in' : 'glideIn 0.65s ease-out 2s forwards'
+          'glide-in' : 'glideIn 0.5s ease-out 0.5s forwards'
         },
         keyframes:{
           glideIn:{
@@ -17,11 +17,16 @@ module.exports = {
             '100%':{transform: 'translateY(0)', opacity: '1'}
 
           }
-        }
-      },
+        },
+        
+          boxShadow: {
+            'orange-glow': '0px 4px 10px #f97316',
+          },
+      
     },
     variants: {
       extend: {},
     },
     plugins: [],
   }
+}

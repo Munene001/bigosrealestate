@@ -18,7 +18,7 @@
         </button>
         <div
           v-if="isVisible"
-          class="flex flex-col gap-2 text-sm pl-2 absolute w-[150px] mt-[10px]"
+          class="flex flex-col  z-50 gap-2 text-sm pl-2 absolute w-[150px] mt-[10px]"
         >
           <router-link
             to="/buyorrent/buy"
@@ -35,7 +35,7 @@
         class="text-[14px] leading-[14px] font-semibold no-underline font-montserrat  text-white"
         to="/about"
       >
-        ABOUT
+        ABOUT US
       </router-link>
       <router-link
         class="text-[14px] leading-[14px] font-semibold no-underline font-montserrat  text-white"
@@ -53,7 +53,7 @@
       <div class="flex flex-row gap-3 items-center">
         <Icon
           icon="carbon:phone-voice"
-          style="color: orangered; font-size: 20px"
+          style="color:#F97316; font-size: 20px"
         />
         <div class=" text-white">0726551880</div>
       </div>
@@ -72,7 +72,7 @@
   </div>
   <div
     v-if="isOpen"
-    class="fixed top-0 right-0 flex flex-row w-[90%] h-[100vh] z-10 bg-white px-[40px] pt-[100px]"
+    class="fixed top-0 right-0 flex flex-row w-[90%] h-[100vh] z-50 bg-white px-[40px] pt-[100px]"
   >
   <div class="flex flex-col gap-[3px]">
     <router-link
@@ -109,7 +109,7 @@
         class="flex h-[55px] text-[18px] leading-[18px] font-semibold no-underline font-montserrat  border-b border-gray-400 items-center"
         to="/about"
       >
-        ABOUT
+        ABOUT US
       </router-link>
       <router-link @click="togglePopup"
         class="flex h-[55px] text-[18px] leading-[18px] font-semibold no-underline font-montserrat  border-b border-gray-400 items-center"

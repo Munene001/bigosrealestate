@@ -14,13 +14,13 @@ export default {
  
   <div class="flex w-[full] flex-col bg-[#f4f3f1] items-center justify-center py-[40px] md:w-[700] box-border">
     <div
-      class=" w-[85%] flex flex-col px-[10px] py-[20px]  rounded-2xl bg-white md:w-[700px] md:border md:border-black text-center md:p-[10px] gap-[28px]"
+      class=" w-[85%] flex flex-col px-[10px] py-[20px]  rounded-md shadow-2xl bg-white md:w-[700px] md:border md:border-black text-center md:p-[10px] gap-[28px]"
     >
     <div class="flex flex-col gap-[8px]">
       <div class="font-[Montserrat] text-[24px] leading-[31px] font-semibold">
         Inquire from us
       </div>
-      <div class = "text-[20px] leading-[20px] md:leading-[16px] font-medium font-[Montserrat] text-[#424138]">
+      <div class = "text-[20px] leading-[20px] md:leading-[20px] font-medium font-[Montserrat] text-[#424138]">
         For any question regarding our properties or Accommodation leave a
         comment below and we will contact you
       </div>
@@ -47,7 +47,7 @@ export default {
           />
           <label class="flex items-start text-[17px] leading-[25px] font-semibold font-[Montserrat]  mt-[1px] p-[4px] box-border">Message</label>
           <textarea class="md:w-[400px] h-[102px] border border-black mb-[15px]  mt-[1px] p-[4px] box-border "></textarea>
-          <button class=" block  bg-amber-400  w-[50%] h-[38px] mx-auto hover:bg-transparent border-2 border-black-500;" >Submit</button>
+          <button class=" block  bg-orange-500  w-[50%] h-[38px] mx-auto hover:bg-transparent border-2 border-black-500;" >Submit</button>
         </form>
       </div>
     </div>
