@@ -18,10 +18,10 @@
     </div>
     <div>
       <div class = "font-[Montserrat] text-[20px] font-normal leading-[32px] text-[#202020] mb-[8px]">EXPLORE</div>
-      <div class = "font-[Montserrat] text-[14px] font-normal leading-[25px] text-[#323232]">BIGOS DEVELOPMENTS</div>
       <div class = "font-[Montserrat] text-[14px] font-normal leading-[25px] text-[#323232]">FOR SALE</div>
       <div class = "font-[Montserrat] text-[14px] font-normal leading-[25px] text-[#323232]">FOR RENT</div>
       <div class = "font-[Montserrat] text-[14px] font-normal leading-[25px] text-[#323232]">NEWS</div>
+      <router-link to="/dashboard" class="font-[Montserrat] text-[14px] font-normal leading-[25px] text-[#323232]">DASHBOARD</router-link>
     </div>
   </div>
   <div class = "flex flex-row justify-center mb-[30px] gap-[4px]"><Icon icon = "mdi:linkedin"/> <Icon icon = "mdi:facebook"/> <Icon icon = "mdi:instagram"/></div>

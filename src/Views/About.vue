@@ -9,7 +9,7 @@ import Upperfoot from '../components/Upperfoot.vue';
     <div class="px-[25px] py-[10px] h-[220px]  justify-center  text-[#242d2d] flex flex-col gap-[18px]">
         <div class="flex flex-row"><Icon icon = "mage:home"/><Icon icon = "lsicon:right-filled" /><span class="align-middle font-light">About us</span></div>
         <div class="flex flex-col gap-[10px]">
-        <div class="font-[Montserrat] text-[40px] leading-[60px] font-bold">ABOUT US</div>
+        <div class="font-[Montserrat] text-[40px] leading-[60px] font-bold ">ABOUT US</div>
         <div class = "text-[16px] leading-[18px] font-medium">Find out about our history ,our staff and our services</div>
         </div>
     </div>

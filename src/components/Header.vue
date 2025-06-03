@@ -22,10 +22,10 @@
         >
           <router-link
             to="/buyorrent/buy"
-            class="border-b-2 border-black hover:bg-orange-600 items-center  text-white "
+            class="border-b-2 border-black hover:bg-orange-600 items-center  text-white px-[5px] box-border"
             >FOR SALE</router-link
           >
-          <router-link to="/buyorrent/rent" class="hover:bg-orange-600 items-center  text-white"
+          <router-link to="/buyorrent/rent" class="hover:bg-orange-600 items-center  text-white px-[5px] box-border"
             >FOR RENT</router-link
           >
         </div>

@@ -9,6 +9,8 @@ import Developments from './Views/Developments.vue'
 import Contact from './Views/Contact.vue'
 import Buy from './Views/Buy.vue'
 import Rent from './Views/Rent.vue'
+import Dashboard from './Views/Dashboard.vue'
+import Listings from './Views/Listings.vue'
 import { Icon } from "@iconify/vue";
 
 
@@ -19,7 +21,11 @@ const router = createRouter({
         {path: '/about', name:'ABOUT', component:About},
         {path: '/buyorrent', name:'BUY/RENT', component:BuyorRent, children: [{path:'buy', name:'BUY', component:Buy},{path:'rent', name:'RENT', component:Rent}]},
         {path: '/development', name:'DEVELOPMENTS', component:Developments},
-        {path: '/contact', name:'CONTACT', component:Contact}
+        {path: '/contact', name:'CONTACT', component:Contact},
+        {path: '/dashboard', name:'DASHBOARD',component:Dashboard},
+        {path:'/listings',name:'LISTINGS',component:Listings}
+
+
     ]
 
 })

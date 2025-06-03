@@ -9,7 +9,7 @@
         CONTACT<br />US
       </div>
       <div
-        class=" text-[20px] md:text-[25px] font-normal text-white leading-[38px] font-[Montserrat,sans-serif]"
+        class=" text-[20px] md:text-[25px] font-normal text-orange-500 leading-[38px] font-[Montserrat,sans-serif]"
       >
         Get in touch with our experts
       </div>
