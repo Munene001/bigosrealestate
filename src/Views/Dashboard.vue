@@ -1,3 +1,4 @@
+```vue
 <template>
   <Headerlite />
   <div
@@ -9,7 +10,7 @@
       class="flex flex-col gap-[40px] md:gap-[25px]"
     >
       <div class="flex flex-col gap-[10px]">
-        <label class="text-orange-900"  for="title">Title :</label>
+        <label class="text-orange-900" for="title">Title :</label>
         <input
           class="border border-black h-[42px] p-[8px]"
           v-model="form.title"
@@ -20,7 +21,7 @@
         />
       </div>
       <div class="flex flex-col gap-[10px]">
-        <label  class="text-orange-900" for="location">Location :</label>
+        <label class="text-orange-900" for="location">Location :</label>
         <input
           class="border border-black h-[42px] p-[8px]"
           v-model="form.location"
@@ -31,7 +32,7 @@
         />
       </div>
       <div class="flex flex-col gap-[10px]">
-        <label class="text-orange-900"  for="location_url">Location URL(Optional) :</label>
+        <label class="text-orange-900" for="location_url">Location URL(Optional) :</label>
         <input
           class="border border-black h-[42px] p-[8px]"
           v-model="form.location_url"
@@ -40,7 +41,7 @@
         />
       </div>
       <div class="flex flex-col gap-[10px]">
-        <label class="text-orange-900"  for="unit_type">Unit Type :</label>
+        <label class="text-orange-900" for="unit_type">Unit Type :</label>
         <input
           class="border border-black h-[42px] p-[8px]"
           v-model="form.unit_type"
@@ -51,7 +52,7 @@
         />
       </div>
       <div class="flex flex-col gap-[10px]">
-        <label class="text-orange-900"  for="furnished">Furnished :</label>
+        <label class="text-orange-900" for="furnished">Furnished :</label>
         <select
           class="border border-black h-[42px] p-[8px]"
           v-model="form.furnished"
@@ -63,7 +64,7 @@
         </select>
       </div>
       <div class="flex flex-col gap-[10px]">
-        <label  class="text-orange-900" for="price_ksh">Price (KSH) :</label>
+        <label class="text-orange-900" for="price_ksh">Price (KSH) :</label>
         <input
           class="border border-black h-[42px] p-[8px]"
           v-model.number="form.price_ksh"
@@ -73,7 +74,6 @@
           @wheel.prevent
         />
       </div>
-
       <div class="flex flex-col gap-[10px]">
         <label class="text-orange-900" for="bedroom_count">Bedrooms Count :</label>
         <input
@@ -107,6 +107,28 @@
           @wheel.prevent
         />
       </div>
+      <div class="flex flex-col gap-[10px]">
+        <label class="text-orange-900" for="primary_image">Primary Image (Required, <250KB) :</label>
+        <input
+          type="file"
+          id="primary_image"
+          accept="image/jpeg,image/png,image/webp"
+          @change="handlePrimaryImage"
+          required
+        />
+        <p v-if="primaryImage" class="text-sm">Selected: {{ primaryImage.name }}</p>
+      </div>
+      <div class="flex flex-col gap-[10px]">
+        <label class="text-orange-900" for="gallery_images">Gallery Images (Optional, <250KB each) :</label>
+        <input
+          type="file"
+          id="gallery_images"
+          accept="image/jpeg,image/png,image/webp"
+          multiple
+          @change="handleGalleryImages"
+        />
+        <p v-if="galleryImages.length" class="text-sm">Selected: {{ galleryImages.length }} images</p>
+      </div>
       <div class="flex flex-col gap-[17px]">
         <div class="flex flex-col gap-[5px]">
           <label class="text-orange-900" for="description">Description :</label>
@@ -114,7 +136,7 @@
             class="border border-black w-full h-[250px] p-[8px]"
             v-model="form.description"
             id="description"
-            placeholder="A brief description, do not exceed 200 words , follow paragraph rules"
+            placeholder="A brief description, do not exceed 200 words, follow paragraph rules"
           ></textarea>
         </div>
         <div class="flex flex-col gap-[5px]">
@@ -123,7 +145,7 @@
             class="border border-black w-full h-[250px] p-[8px]"
             v-model="form.features"
             id="features"
-            placeholder=" Go to new line after very bullet point, Entails details like tilled floors, open planned kitchen, nice doors.  "
+            placeholder="Go to new line after every bullet point, Entails details like tilled floors, open planned kitchen, nice doors."
           ></textarea>
         </div>
         <div class="flex flex-col gap-[5px]">
@@ -132,14 +154,15 @@
             class="border border-black w-full h-[250px] p-[8px]"
             v-model="form.amenities"
             id="amenities"
-            placeholder=" Go to newline after every bullet point, Entails details like: gym, ample parking,"
+            placeholder="Go to newline after every bullet point, Entails details like: gym, ample parking,"
             required
           ></textarea>
         </div>
       </div>
       <button
-        class="block bg-orange-500 w-[50%] h-[38px] mx-auto hover:bg-orange-300 border-2 border-black-500;"
+        class="block bg-orange-500 w-[50%] h-[38px] mx-auto hover:bg-orange-300 border-2 border-black-500"
         type="submit"
+        :disabled="loading"
       >
         {{ loading ? "Submitting..." : "Submit Property" }}
       </button>
@@ -153,6 +176,7 @@
     </div>
   </div>
 </template>
+
 <script setup lang="ts">
 import Headerlite from "../components/Headerlite.vue";
 import axios from "axios";
@@ -188,22 +212,71 @@ const form = ref<PropertyForm>({
   amenities: "",
 });
 
+const primaryImage = ref<File | null>(null);
+const galleryImages = ref<File[]>([]);
 const loading = ref(false);
 const message = ref("");
 const error = ref(false);
+
+const handlePrimaryImage = (event: Event) => {
+  const input = event.target as HTMLInputElement;
+  if (input.files && input.files[0]) {
+    if (input.files[0].size > 250 * 1024) {
+      error.value = true;
+      message.value = "Primary image must be under 250KB";
+      input.value = "";
+      primaryImage.value = null;
+    } else {
+      primaryImage.value = input.files[0];
+      error.value = false;
+      message.value = "";
+    }
+  }
+};
+
+const handleGalleryImages = (event: Event) => {
+  const input = event.target as HTMLInputElement;
+  if (input.files) {
+    const files = Array.from(input.files);
+    galleryImages.value = files.filter(file => file.size <= 250 * 1024);
+    if (files.length !== galleryImages.value.length) {
+      error.value = true;
+      message.value = "Some gallery images exceed 250KB";
+    } else {
+      error.value = false;
+      message.value = "";
+    }
+  }
+};
 
 const submitProperty = async () => {
   loading.value = true;
   message.value = "";
   error.value = false;
 
+  if (!primaryImage.value) {
+    error.value = true;
+    message.value = "Primary image is required";
+    loading.value = false;
+    return;
+  }
+
   try {
+    const formData = new FormData();
+    Object.entries(form.value).forEach(([key, value]) => {
+      formData.append(key, value !== null ? value.toString() : "");
+    });
+    formData.append("primary_image", primaryImage.value);
+    galleryImages.value.forEach((file, index) => {
+      formData.append(`gallery_images[${index}]`, file);
+    });
+
     const response = await axios.post(
       "http://127.0.0.1:8000/api/properties",
-      form.value,
+      formData,
       {
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "multipart/form-data",
           Accept: "application/json",
         },
       }
@@ -224,9 +297,11 @@ const submitProperty = async () => {
       features: "",
       amenities: "",
     };
+    primaryImage.value = null;
+    galleryImages.value = [];
     setTimeout(() => {
       message.value = "";
-    }, 5000);
+    }, 9000);
   } catch (err: any) {
     error.value = true;
     message.value = err.response?.data?.message || "Failed to post property";
@@ -238,3 +313,4 @@ const submitProperty = async () => {
   }
 };
 </script>
+```
