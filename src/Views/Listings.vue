@@ -7,6 +7,13 @@
   <div v-else-if="properties.length === 0">No properties found</div>
   <div v-else class="flex flex-col gap-[15px]">
     <div v-for= "property in properties" :key="property.id" >
+      <div v-if="property.images && property.images.length > 0" class="mt-2">
+          <img 
+            :src="property.images.find(img => img.is_primary)?.image_url || property.images[0].image_url" 
+            :alt="property.title"
+            class="w-64 h-48 object-cover"
+          >
+        </div>
         <div>{{ property.title }}</div>
         <div>{{ property.location }}</div>
         <div>{{ property.unit_type }}</div>
@@ -24,6 +31,13 @@ import axios from "axios";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
+interface Image{
+  id:number
+  property_id:number;
+  image_url:string;
+  is_primary:boolean;
+}
+
 interface Property {
   id: number;
   title: string;
@@ -39,6 +53,7 @@ interface Property {
   features: string;
   amenities: string;
   created_at: string;
+  images:Image[];
 }
 
 const properties = ref<Property[]>([]);
@@ -51,6 +66,9 @@ const fetchProperties = async () => {
   error.value = "";
   try {
     const response = await axios.get(`http://127.0.0.1:8000/api/properties`, {
+      params:{
+        with_images:true
+      },
       headers: {
         Accept: "application/json",
       },
