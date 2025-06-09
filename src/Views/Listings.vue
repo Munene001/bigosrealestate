@@ -1,25 +1,26 @@
 <template>
   <Headerlite />
-  <div>
+  <div class="p-[10px]">
   <div class="text-orange-900 font-bold">LISTINGS</div>
   <div v-if = "loading">Loading....</div>
   <div v-else-if = "error" class="text-red-500">{{ error }}</div>
   <div v-else-if="properties.length === 0">No properties found</div>
   <div v-else class="flex flex-col gap-[15px]">
-    <div v-for= "property in properties" :key="property.id" >
+    <div v-for= "property in properties" :key="property.id"  class="flex flex-row justify-between items-center border border-gray p-[4px]">
       <div v-if="property.images && property.images.length > 0" class="mt-2">
           <img 
             :src="property.images.find(img => img.is_primary)?.image_url || property.images[0].image_url" 
             :alt="property.title"
-            class="w-64 h-48 object-cover"
+            class=" w-[70px] h-[70px] object-cover"
           >
         </div>
-        <div>{{ property.title }}</div>
-        <div>{{ property.location }}</div>
-        <div>{{ property.unit_type }}</div>
-        <div>
-            <button @click = editProperty(property.id)>Edit</button>
-            <button @click="deleteProperty(property.id)">Delete</button>
+        <div class="font-[Montserrat]">{{ property.title }}</div>
+        <div class="hidden md:block font-[Montserrat] ">{{ property.location }}</div>
+        <div class="hidden md:block font-[Montserrat]">{{ property.listing_type }}</div>
+        <div class="hidden md:block font-[Montserrat]">{{ new Date(property.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour:'2-digit', minute:'2-digit', hour12:true }) }}</div>
+        <div class="flex flex-col gap-[6px] ">
+            <button class="border border-gray-500 rounded-sm text-white bg-black p-[3px] font-medium" @click = editProperty(property.id)>Edit</button>
+            <button class="border border-gray-500 rounded-sm text-white bg-black p-[3px] font-medium" @click="deleteProperty(property.id)">Delete</button>
         </div>
     </div>
   </div>
@@ -53,6 +54,7 @@ interface Property {
   features: string;
   amenities: string;
   created_at: string;
+  listing_type: "for sale"|"for rent"
   images:Image[];
 }
 

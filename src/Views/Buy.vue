@@ -1,2 +1,1 @@
-<template>
-hello</template>
+<template></template>

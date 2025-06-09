@@ -64,6 +64,18 @@
         </select>
       </div>
       <div class="flex flex-col gap-[10px]">
+        <label class="text-orange-900" for="listing_type">Listing Type :</label>
+        <select
+          class="border border-black h-[42px] p-[8px]"
+          v-model="form.listing_type"
+          id="listing_type"
+          required
+        >
+          <option class="w-full" value="for sale">For Sale</option>
+          <option class="w-full" value="for rent">For Rent</option>
+        </select>
+      </div>
+      <div class="flex flex-col gap-[10px]">
         <label class="text-orange-900" for="price_ksh">Price (KSH) :</label>
         <input
           class="border border-black h-[42px] p-[8px]"
@@ -195,6 +207,7 @@ interface PropertyForm {
   description: string;
   features: string;
   amenities: string;
+  listing_type:"for sale" | "for rent";
 }
 
 const form = ref<PropertyForm>({
@@ -210,6 +223,7 @@ const form = ref<PropertyForm>({
   description: "",
   features: "",
   amenities: "",
+  listing_type:"for sale"
 });
 
 const primaryImage = ref<File | null>(null);
@@ -296,6 +310,7 @@ const submitProperty = async () => {
       description: "",
       features: "",
       amenities: "",
+      listing_type:"for sale"
     };
     primaryImage.value = null;
     galleryImages.value = [];
