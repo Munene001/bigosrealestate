@@ -6,6 +6,9 @@
   <div v-else-if = "error" class="text-red-500">{{ error }}</div>
   <div v-else-if="properties.length === 0">No properties found</div>
   <div v-else class="flex flex-col gap-[15px]">
+    <div v-if="!loading && !error" class="text-[35px] leading-[45px] font-bold font-[Montserrat] text-orange-500">
+          {{ count }}  Apartments
+    </div>
     <div v-for= "property in properties" :key="property.id"  class="flex flex-row justify-between items-center border border-gray p-[4px]">
       <div v-if="property.images && property.images.length > 0" class="mt-2">
           <img 
@@ -55,10 +58,20 @@ interface Property {
   amenities: string;
   created_at: string;
   listing_type: "for sale"|"for rent"
+  construction_status: 'complete'|'unfinished'
   images:Image[];
 }
+interface ApiResponse{
+    properties: Property[];
+    count: number;
+    listing_type: string|null;
+
+  }
+
 
 const properties = ref<Property[]>([]);
+const count = ref(0);
+const listingType = ref<string| null>(null);
 const loading = ref(true);
 const error = ref("");
 
@@ -67,7 +80,7 @@ const fetchProperties = async () => {
   loading.value = true;
   error.value = "";
   try {
-    const response = await axios.get(`http://127.0.0.1:8000/api/properties`, {
+    const response = await axios.get<ApiResponse>(`http://127.0.0.1:8000/api/properties`, {
       params:{
         with_images:true
       },
@@ -75,7 +88,9 @@ const fetchProperties = async () => {
         Accept: "application/json",
       },
     });
-    properties.value = response.data;
+    properties.value = response.data.properties;
+    count.value = response.data.count;
+    listingType.value = response.data.listing_type;
   } catch (err: any) {
     error.value = err.response?.data?.message || "Failed to fetch properties";
   } finally {
