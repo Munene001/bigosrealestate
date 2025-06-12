@@ -9,7 +9,7 @@
     <div v-if="!loading && !error" class="text-[35px] leading-[45px] font-bold font-[Montserrat] text-orange-500">
           {{ count }}  Apartments
     </div>
-    <div v-for= "property in properties" :key="property.id"  class="flex flex-row justify-between items-center border border-gray p-[4px]">
+    <div v-for= "property in properties" :key="property.id"  class="md:grid md:grid-cols-6  justify-between items-center border border-gray p-[4px]">
       <div v-if="property.images && property.images.length > 0" class="mt-2">
           <img 
             :src="property.images.find(img => img.is_primary)?.image_url || property.images[0].image_url" 
@@ -18,7 +18,7 @@
           >
         </div>
         <div class="font-[Montserrat]">{{ property.title }}</div>
-        <div class="hidden md:block font-[Montserrat] ">{{ property.location }}</div>
+        <div class="hidden md:block font-[Bodoni] ">{{ property.location }}</div>
         <div class="hidden md:block font-[Montserrat]">{{ property.listing_type }}</div>
         <div class="hidden md:block font-[Montserrat]">{{ new Date(property.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour:'2-digit', minute:'2-digit', hour12:true }) }}</div>
         <div class="flex flex-col gap-[6px] ">

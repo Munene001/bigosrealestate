@@ -17,35 +17,35 @@ export default {
       class=" w-[85%] flex flex-col px-[10px] py-[20px]  rounded-md shadow-2xl bg-white md:w-[700px] md:border md:border-black text-center md:p-[10px] gap-[28px]"
     >
     <div class="flex flex-col gap-[8px]">
-      <div class="font-[Montserrat] text-[24px] leading-[31px] font-semibold">
+      <div class=" text-[24px] leading-[31px] font-semibold">
         Inquire from us
       </div>
-      <div class = "text-[20px] leading-[20px] md:leading-[20px] font-medium font-[Montserrat] text-[#424138]">
+      <div class = "text-[20px] leading-[20px] md:leading-[20px] font-medium font-[Bodoni] text-[#424138]">
         For any question regarding our properties or Accommodation leave a
         comment below and we will contact you
       </div>
       </div>
       <div>
         <form class="grid  items-center justify-center">
-          <label class="flex items-start text-[17px] leading-[25px] font-semibold font-[Montserrat] ">Name</label>
+          <label class="flex items-start text-[17px] leading-[25px] font-semibold  ">Name</label>
           <input
             class="md:w-[400px] h-[42px] border border-black mb-[15px] mt-[1px] p-[4px] box-border"
             type="text"
             placeholder=""
           />
-          <label class="flex items-start text-[17px] leading-[25px] font-semibold font-[Montserrat] p-[4px] box-border">Phone Number</label>
+          <label class="flex items-start text-[17px] leading-[25px] font-semibold  p-[4px] box-border">Phone Number</label>
           <input
             class="md:w-[400px] h-[42px] border border-black mb-[15px]  mt-[1px] p-[4px]"
             type="phone"
             placeholder=""
           />
-          <label class="flex items-start text-[17px] leading-[25px] font-semibold font-[Montserrat] p-[4px] box-border">Email</label>
+          <label class="flex items-start text-[17px] leading-[25px] font-semibold p-[4px] box-border">Email</label>
           <input
             class="md:w-[400px] h-[42px] border border-black mb-[15px]  mt-[1px] p-[4px]"
             type="email"
             placeholder=""
           />
-          <label class="flex items-start text-[17px] leading-[25px] font-semibold font-[Montserrat]  mt-[1px] p-[4px] box-border">Message</label>
+          <label class="flex items-start text-[17px] leading-[25px] font-semibold   mt-[1px] p-[4px] box-border">Message</label>
           <textarea class="md:w-[400px] h-[102px] border border-black mb-[15px]  mt-[1px] p-[4px] box-border "></textarea>
           <button class=" block  bg-orange-500  w-[50%] h-[38px] mx-auto hover:bg-transparent border-2 border-black-500;" >Submit</button>
         </form>

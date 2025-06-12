@@ -1,6 +1,7 @@
 <script setup>
 import Bigosvalues from "../components/Bigosvalues.vue";
 import Propertybuffet from "../components/Propertybuffet.vue";
+import Upperfoot from "../components/Upperfoot.vue";
 </script>
 <template>
   <div
@@ -11,12 +12,12 @@ import Propertybuffet from "../components/Propertybuffet.vue";
       class="relative z-10 text-white text-center flex flex-col items-center gap-[25px] px-[20px] box-border animate-glide-in opacity-0 md:px-[10%]"
     >
       <div
-        class="font-[Montserrat ,sans-serif] font-bold text-[35px] leading-[38px] md:text-[80px] md:leading-[88px]"
+        class="font-[Bodoni] font-bold text-[35px] leading-[38px] md:text-[89px] md:leading-[92px]"
       >
         Kenya's Hub for <span class="text-orange-500"> Real Estate </span>
       </div>
       <div
-        class="font-[Montserrat] font-semibold text-[18px] leading-[28px] text-[#e9e9e7]"
+        class="font-[] font-semibold text-[18px] leading-[28px] text-[#e9e9e7]"
       >
         We bridge investors to Kenya’s real estate market with reliability,
         innovation, and personalized alliances, delivering upscale residences
@@ -33,7 +34,7 @@ import Propertybuffet from "../components/Propertybuffet.vue";
   <div
     class="bg-[rgb(31,24,24)] w-[full] flex flex-col items-center py-[60px] gap-[30px] md:px-[20px] md:py-[70px] md:gap-[40px]"
   >
-    <div class="text-[40px] font-bold leading-[44px] text-white">WHY BIGOS</div>
+    <div class="text-[40px] font-bold leading-[44px] text-white font-[Bodoni]">WHY BIGOS</div>
     <div
       class="grid grid-flow-row gap-[30px] place-items-center md:grid-cols-3"
     >
@@ -70,4 +71,5 @@ import Propertybuffet from "../components/Propertybuffet.vue";
     </div>
   </div>
   <Propertybuffet/>
+
 </template>

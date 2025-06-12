@@ -25,19 +25,22 @@
           {{ property.price_ksh }}
         </div>
       </div>
-      <div v-if = "property.images && property.images.length > 0" class="flex flex-col md:flex md:flex-row md:h-[450px] md:border border-gray-400">
-        <img :src = "property.images.find(img => img.is_primary)?.image_url || property.images[0].image_url" :alt = "property.title" class="max-h-[450px] md:h-[450px] md:w-[40%] object-scale-down">
-        <div class="grid grid-cols-1 md:grid-cols-2">
-            <img v-for="(image, index) in property.images.filter(img => !img.is_primary)" :key = "`gallery-image-${index}`" :src = "image.image_url" :alt = "`${property.title} - Gallery Image ${index + 1}`" class="max-h-[450px] w-[100%] md:h-[225px] object-scale-down">
-            </div>
-
-      </div>
+      <div v-if="property.images && property.images.length > 0" class="flex flex-col md:flex md:flex-row md:h-[450px] md:border border-gray-400">
+    <a :href="property.images.find(img => img.is_primary)?.image_url || property.images[0].image_url" target="_self" class="md:w-[35%]">
+        <img :src="property.images.find(img => img.is_primary)?.image_url || property.images[0].image_url" :alt="property.title" class="max-h-[450px] md:h-[450px] md:w-[40%] object-scale-down">
+    </a>
+    <div class="grid grid-cols-1 md:grid-cols-3">
+        <a v-for="(image, index) in property.images.filter(img => !img.is_primary)" :key="`gallery-image-${index}`" :href="image.image_url" target="_self" >
+            <img :src="image.image_url" :alt="`${property.title} - Gallery Image ${index + 1}`" class="max-h-[450px] w-[100%] md:h-[225px] object-scale-down">
+        </a>
+    </div>
+</div>
       <div class="flex flex-col gap-[10px]">
         <div class="text-[20px] font-semibold leading-[30px] font-[Montserrat]">
           Description
         </div>
         <div
-          class="font-[Montserrat] text-[18px] leading-[26px] font-medium text-[#333330]"
+          class="font-[Bodoni] text-[18px] leading-[26px] font-medium text-[#333330]"
         >
           {{ property.description }}
         </div>
@@ -46,20 +49,20 @@
         <div class="text-[20px] font-semibold leading-[30px] font-[Montserrat]">
           Property Features
         </div>
-        <div class="flex flex-col gap-[10px] text-[16px] leading-[24px]">
-          <div class="flex flex-row items-center gap-[10px]">
+        <div class="flex flex-col gap-[10px] text-[18px] leading-[24px]  ">
+          <div class="flex flex-row items-center gap-[10px] font-[Bodoni]">
             <Icon
               icon="marketeq:bedroom-6"
               style="color: orange;"
             />{{ property.bedroom_count }} bedrooms
           </div>
-          <div class="flex flex-row items-center gap-[10px]">
+          <div class="flex flex-row items-center gap-[10px] font-[Bodoni]">
             <Icon
               icon="marketeq:bathroom-2"
               style="width: 30px; height: 30px; color: black"
             />{{ property.bathroom_count }} bathrooms
           </div>
-          <div class="flex flex-row items-center gap-[10px]">
+          <div class="flex flex-row items-center gap-[10px] font-[Bodoni]">
             <Icon
               icon="tabler:car-garage"
               style="width: 30px; height: 30px"
@@ -76,7 +79,7 @@
             .split('\n')
             .filter((f) => f.trim() !== '')"
           :key="`feature-${index}`"
-          class="flex flex-col my-[10px]"
+          class="flex flex-col my-[10px] font-[Bodoni] text-[18px]"
         >
           <span class="flex flex-row gap-[20px] items-center"
             ><Icon icon="game-icons:hammer-nails" style="color: orange;" /> {{ feature.trim() }}</span
@@ -92,7 +95,7 @@
             .split('\n')
             .filter((a) => a.trim() !== '')"
           :key="`amenity-${index}`"
-          class="flex flex-col my-[10px]"
+          class="flex flex-col my-[10px] font-[Bodoni] text-[18px]"
         >
           <span class="flex flex-row gap-[20px] items-center"
             ><Icon icon="material-symbols:apartment" style="color: orange;" />
@@ -102,7 +105,7 @@
       </div>
       <div v-if="property.location_url" class="flex flex-col gap-[10px]">
         <div class="text-[20px] font-semibold leading-[30px] font-[Montserrat]">Exact Location</div>
-        <div class="break-words">{{ property.location_url }}</div>
+        <div class="break-words font-[Bodoni] text-[18px]">{{ property.location_url }}</div>
         
 
     

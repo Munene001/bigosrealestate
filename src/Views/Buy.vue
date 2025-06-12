@@ -6,11 +6,11 @@
     <div v-else-if="properties.length === 0">No properties found</div>
     <div v-else class="flex flex-col gap-[15px]">
       <router-link to="/buy" v-if="!loading && !error" class="flex flex-row"><Icon icon = "mage:home"/><Icon icon = "lsicon:right-filled" /><span class="align-middle font-light">Apartments {{ listingType? listingType:'' }}</span></router-link>
-      <div v-if="!loading && !error" class="text-[35px] leading-[45px] font-bold font-[Montserrat] ">
+      <div v-if="!loading && !error" class="text-[35px] leading-[45px] font-bold ">
           {{ count }}  Apartments
     </div>
     <div class="flex flex-col gap-[35px]">
-      <div v-for= "property in properties" :key="property.id"  class="flex flex-col gap-[28px] border pb-[15px]  border-gray-300 w-[full]  md:flex md:flex-row">
+      <div v-for= "property in properties" :key="property.id"  class="flex flex-col gap-[28px] border pb-[15px]  border-gray-300 w-[full]  md:flex md:flex-row transition-transform duration-500 ease-in-out hover:scale-105">
         <div v-if="property.images && property.images.length > 0">
             <img 
               :src="property.images.find(img => img.is_primary)?.image_url || property.images[0].image_url" 
@@ -20,13 +20,13 @@
           </div>
           <div class="flex flex-col gap-[28px] md:flex md:flex-col md:justify-center w-full md:pr-[100px] ">
           <div class="flex flex-row justify-between px-[10px] w-[full] items-center">
-            <div class=" px-[7px] bg-orange-500 text-[14px] md:text-[18px] leading-[28px] md:leading-[35px] font-medium text-white">construction {{ property.construction_status }}</div>
+            <div class=" font-[bodoni] px-[7px] bg-orange-500 text-[14px] md:text-[18px] leading-[28px] md:leading-[35px] font-medium text-white">construction {{ property.construction_status }}</div>
             <div class="text-[19px] md:text-[23px] leading-[32px] md:leading-[40px] font-semibold">Ksh: {{ property.price_ksh }}</div>
           </div>
-          <div class="font-[Montserrat] px-[7px] text-[24px] md:text-[28px] font-semibold md:leading-[40px] leading-[32px]"><span>{{ property.title }}</span> | <span>{{ property.location }}</span> | <span>{{ property.unit_type }}</span></div>
+          <div class=" px-[7px] text-[24px] md:text-[28px] font-semibold md:leading-[40px] leading-[32px]"><span>{{ property.title }}</span> | <span>{{ property.location }}</span> | <span>{{ property.unit_type }}</span></div>
           <div class="flex flex-row justify-between px-[7px]">
-            <router-link to="/contact" class="py-[10px] md:px-[45px] px-[32px] bg-black text-orange-500 font-medium hover:bg-transparent">Contact us</router-link>
-            <button @click="detailProperty(property.id)" class="py-[10px] md:px-[45px] px-[32px] bg-transparent border border-black hover:bg-orange-500">View Details</button>
+            <router-link to="/contact" class="py-[10px] md:px-[45px] px-[32px] bg-black text-orange-500 font-medium hover:bg-transparent font-[Bodoni] text-[18px]">Contact us</router-link>
+            <button @click="detailProperty(property.id)" class="py-[10px] md:px-[45px] px-[32px] bg-transparent border border-black hover:bg-orange-500 font-[Bodoni] text-[18px]">View Details</button>
           </div> 
           </div>   
       </div>

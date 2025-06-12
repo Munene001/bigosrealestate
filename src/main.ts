@@ -29,9 +29,10 @@ const router = createRouter({
         {path:'/buyorrent/details/:id', name: 'DETAILS', component:Details}
 
 
-    ]
+    ],
+   
 
-})
+});
 
 createApp(App)
 .component('Icon', Icon)
