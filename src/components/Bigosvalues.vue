@@ -5,7 +5,7 @@
     <Icon :icon="iconName" style="color: #f97316; font-size: 35px" />
     <div class="flex flex-col gap-[8px]">
       <div
-        class="font-[Bodoni] text-[20px] font-semibold leading-[22px] text-white"
+        class="font-[Sans-serif] text-[20px] font-semibold leading-[22px] text-white"
       >
         {{ title }}
       </div>

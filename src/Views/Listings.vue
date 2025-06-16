@@ -6,7 +6,7 @@
   <div v-else-if = "error" class="text-red-500">{{ error }}</div>
   <div v-else-if="properties.length === 0">No properties found</div>
   <div v-else class="flex flex-col gap-[15px]">
-    <div v-if="!loading && !error" class="text-[35px] leading-[45px] font-bold font-[Montserrat] text-orange-500">
+    <div v-if="!loading && !error" class="text-[35px] leading-[45px] font-bold  text-orange-500">
           {{ count }}  Apartments
     </div>
     <div v-for= "property in properties" :key="property.id"  class="md:grid md:grid-cols-6  justify-between items-center border border-gray p-[4px]">
@@ -17,10 +17,10 @@
             class=" w-[70px] h-[70px] object-cover"
           >
         </div>
-        <div class="font-[Montserrat]">{{ property.title }}</div>
-        <div class="hidden md:block font-[Bodoni] ">{{ property.location }}</div>
-        <div class="hidden md:block font-[Montserrat]">{{ property.listing_type }}</div>
-        <div class="hidden md:block font-[Montserrat]">{{ new Date(property.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour:'2-digit', minute:'2-digit', hour12:true }) }}</div>
+        <div class="font-[Sans-serif]">{{ property.title }}</div>
+        <div class="hidden md:block font-[Sans-serif] ">{{ property.location }}</div>
+        <div class="hidden md:block font-[Sans-serif]">{{ property.listing_type }}</div>
+        <div class="hidden md:block font-[Sans-serif]">{{ new Date(property.created_at).toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', hour:'2-digit', minute:'2-digit', hour12:true }) }}</div>
         <div class="flex flex-col gap-[6px] ">
             <button class="border border-gray-500 rounded-sm text-white bg-black p-[3px] font-medium" @click = editProperty(property.id)>Edit</button>
             <button class="border border-gray-500 rounded-sm text-white bg-black p-[3px] font-medium" @click="deleteProperty(property.id)">Delete</button>

@@ -153,6 +153,13 @@
         />
         <p v-if="galleryImages.length" class="text-sm">Selected: {{ galleryImages.length }} images</p>
       </div>
+      <div
+      
+      :class="{ 'text-green-500': !error, 'text-red-500': error }"
+      v-if="imessage"
+    >
+      {{ imessage }}
+    </div>
       <div class="flex flex-col gap-[17px]">
         <div class="flex flex-col gap-[5px]">
           <label class="text-orange-900" for="description">Description :</label>
@@ -245,6 +252,7 @@ const galleryImages = ref<File[]>([]);
 const loading = ref(false);
 const message = ref("");
 const error = ref(false);
+const imessage = ref("")
 
 const handlePrimaryImage = (event: Event) => {
   const input = event.target as HTMLInputElement;
@@ -257,7 +265,7 @@ const handlePrimaryImage = (event: Event) => {
     } else {
       primaryImage.value = input.files[0];
       error.value = false;
-      message.value = "";
+      imessage.value = "";
     }
   }
 };
@@ -269,7 +277,7 @@ const handleGalleryImages = (event: Event) => {
     galleryImages.value = files.filter(file => file.size <= 250 * 1024);
     if (files.length !== galleryImages.value.length) {
       error.value = true;
-      message.value = "Some gallery images exceed 250KB";
+      imessage.value = "Some gallery images exceed 250KB";
     } else {
       error.value = false;
       message.value = "";

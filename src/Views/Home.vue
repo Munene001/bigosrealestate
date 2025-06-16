@@ -12,7 +12,7 @@ import Upperfoot from "../components/Upperfoot.vue";
       class="relative z-10 text-white text-center flex flex-col items-center gap-[25px] px-[20px] box-border animate-glide-in opacity-0 md:px-[10%]"
     >
       <div
-        class="font-[Bodoni] font-bold text-[35px] leading-[38px] md:text-[89px] md:leading-[92px]"
+        class="font-[Sans-serif] font-bold text-[35px] leading-[38px] md:text-[89px] md:leading-[92px]"
       >
         Kenya's Hub for <span class="text-orange-500"> Real Estate </span>
       </div>

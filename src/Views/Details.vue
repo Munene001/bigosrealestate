@@ -13,7 +13,7 @@
     </div>
     <div v-if="property" class="flex flex-col gap-[45px]">
       <div class="flex flex-col gap-[5px]">
-        <div class="font-[Montserrat] text-[24px] font-semibold leading-[32px]">
+        <div class="font-[Sans-serif] text-[24px] font-semibold leading-[32px]">
           <span>{{ property.title }}</span> |
           <span>{{ property.location }}</span> |
           <span>{{ property.unit_type }}</span>
@@ -36,33 +36,33 @@
     </div>
 </div>
       <div class="flex flex-col gap-[10px]">
-        <div class="text-[20px] font-semibold leading-[30px] font-[Montserrat]">
+        <div class="text-[20px] font-semibold leading-[30px] font-[Sans-serif]">
           Description
         </div>
         <div
-          class="font-[Bodoni] text-[18px] leading-[26px] font-medium text-[#333330]"
+          class="font-[Sans-serif] text-[18px] leading-[26px] font-medium text-[#333330]"
         >
           {{ property.description }}
         </div>
       </div>
       <div class="flex flex-col gap-[10px]">
-        <div class="text-[20px] font-semibold leading-[30px] font-[Montserrat]">
+        <div class="text-[20px] font-semibold leading-[30px] font-[Sans-serif]">
           Property Features
         </div>
         <div class="flex flex-col gap-[10px] text-[18px] leading-[24px]  ">
-          <div class="flex flex-row items-center gap-[10px] font-[Bodoni]">
+          <div class="flex flex-row items-center gap-[10px] font-[Sans-serif]">
             <Icon
               icon="marketeq:bedroom-6"
               style="color: orange;"
             />{{ property.bedroom_count }} bedrooms
           </div>
-          <div class="flex flex-row items-center gap-[10px] font-[Bodoni]">
+          <div class="flex flex-row items-center gap-[10px] font-[Sans-serif]">
             <Icon
               icon="marketeq:bathroom-2"
               style="width: 30px; height: 30px; color: black"
             />{{ property.bathroom_count }} bathrooms
           </div>
-          <div class="flex flex-row items-center gap-[10px] font-[Bodoni]">
+          <div class="flex flex-row items-center gap-[10px] font-[Sans-serif]">
             <Icon
               icon="tabler:car-garage"
               style="width: 30px; height: 30px"
@@ -71,7 +71,7 @@
         </div>
       </div>
       <div class="flex flex-col gap-[10px]">
-        <div class="text-[20px] font-semibold leading-[30px] font-[Montserrat]">
+        <div class="text-[20px] font-semibold leading-[30px] font-[Sans-serif]">
           Features
         </div>
         <div
@@ -79,7 +79,7 @@
             .split('\n')
             .filter((f) => f.trim() !== '')"
           :key="`feature-${index}`"
-          class="flex flex-col my-[10px] font-[Bodoni] text-[18px]"
+          class="flex flex-col my-[10px] font-[Sans-serif] text-[18px]"
         >
           <span class="flex flex-row gap-[20px] items-center"
             ><Icon icon="game-icons:hammer-nails" style="color: orange;" /> {{ feature.trim() }}</span
@@ -87,7 +87,7 @@
         </div>
       </div>
       <div class="flex flex-col gap-[10px]">
-        <div class="text-[20px] font-semibold leading-[30px] font-[Montserrat]">
+        <div class="text-[20px] font-semibold leading-[30px] font-[Sans-serif]">
           Fine Ameninties
         </div>
         <div
@@ -95,7 +95,7 @@
             .split('\n')
             .filter((a) => a.trim() !== '')"
           :key="`amenity-${index}`"
-          class="flex flex-col my-[10px] font-[Bodoni] text-[18px]"
+          class="flex flex-col my-[10px] font-[Sans-serif] text-[18px]"
         >
           <span class="flex flex-row gap-[20px] items-center"
             ><Icon icon="material-symbols:apartment" style="color: orange;" />
@@ -104,8 +104,8 @@
         </div>
       </div>
       <div v-if="property.location_url" class="flex flex-col gap-[10px]">
-        <div class="text-[20px] font-semibold leading-[30px] font-[Montserrat]">Exact Location</div>
-        <div class="break-words font-[Bodoni] text-[18px]">{{ property.location_url }}</div>
+        <div class="text-[20px] font-semibold leading-[30px] font-[Sans-serif]">Exact Location</div>
+        <div class="break-words font-[Sans-serif] text-[18px]">{{ property.location_url }}</div>
         
 
     

@@ -16,18 +16,18 @@
     </div>
     <div class="  flex w-[full] p-[30px] mb-[20px] md:w-[100%] md:flex items-center md:p-[10px] ">
       <div class="flex flex-col border-2 rounded-sm shadow-orange-glow bg-white py-[10px] px-[20px] gap-[15px]">
-        <div class="font-[Bodoni] text-[24px] leading-[31px] font-bold">
+        <div class="font-[Sans-serif] text-[24px] leading-[31px] font-bold">
           Our Address
         </div>
         <div
-          class="font-[Bodoni] text-[18px] leading-[25px] text-[#4d4c44]"
+          class="font-[Sans-serif] text-[18px] leading-[25px] text-[#4d4c44]"
         >
           Incase of any inquiries you can fill out the form below and a representative
           will contact you soon
         </div>
         <div class="flex flex-col gap-[5px]">
           <div
-            class="flex  font-[Bodoni] flex-row font-medium items-center gap-[20px] border-2 border-black-500 p-[10px] text-[18px] leading-[30px]"
+            class="flex  font-[Sans-serif] flex-row font-medium items-center gap-[20px] border-2 border-black-500 p-[10px] text-[18px] leading-[30px]"
           >
             <Icon
               icon="carbon:phone-voice"
@@ -36,7 +36,7 @@
             0726551880
           </div>
           <div
-            class="flex  font-[Bodoni] flex-row items-center gap-[20px] border-2 border-black-500 p-[10px] text-[18px] leading-[30px] font-medium"
+            class="flex  font-[Sans-serif] flex-row items-center gap-[20px] border-2 border-black-500 p-[10px] text-[18px] leading-[30px] font-medium"
           >
             <Icon
               icon="mdi-light:email-open"
@@ -45,7 +45,7 @@
             info@bigosrealestate
           </div>
           <div
-            class="flex  font-[Bodoni] flex-row items-center gap-[20px] border-2 border-black-500 p-[10px] text-[18px] leading-[30px] font-medium"
+            class="flex  font-[Sans-serif] flex-row items-center gap-[20px] border-2 border-black-500 p-[10px] text-[18px] leading-[30px] font-medium"
           >
             <Icon
               icon="mynaui:location"
@@ -53,7 +53,7 @@
             />Kilimani, Nairobi
           </div>
           <div
-            class="flex  font-[Bodoni] flex-row items-center gap-[20px] border-2 border-black-500 p-[10px] text-[18px] leading-[30px] font-medium"
+            class="flex  font-[Sans-serif] flex-row items-center gap-[20px] border-2 border-black-500 p-[10px] text-[18px] leading-[30px] font-medium"
           >
             <Icon
               icon="mingcute:time-line"

@@ -1,7 +1,7 @@
 <template>
   <div class="p-[20px] flex flex-col gap-[20px] relative">
     <div class="flex flex-col gap-[10px]">
-      <div class="text-[32px] font-bold leading-[35px] text-[#050400] font-[Bodoni]">Review our Portfolio</div>
+      <div class="text-[32px] font-bold leading-[35px] text-[#050400] font-[Sans-serif]">Review our Portfolio</div>
       <div class="text-[16px] font-semibold leading-[24px]  text-[#3c3b32]">
         Bigo Real Estate offers a portfolio as dynamic as your aspirations. Browse through our curated categories to discover the ideal property that aligns with your vision for a dream home or rewarding investment.
       </div>
@@ -51,11 +51,11 @@
                   class="h-[290px] w-full object-cover hover:scale-105 transition-transform duration-300"
                 >
               </div>
-              <div class="flex bg-black text-orange-500 w-[40%] h-[35px] items-center justify-center">Available</div>
+              <div class="flex bg-black text-orange-500 w-[40%] h-[35px]  font-[Sans-serif] items-center justify-center">Available</div>
               <div class="text-[18px] font-semibold leading-[23px]">
                 <span>{{ property.title }}</span> | <span>{{ property.location }}</span> | <span>{{ property.unit_type }}</span>
               </div>
-              <div class="flex flex-row justify-between">
+              <div class="flex flex-row justify-between font-[Sans-serif]">
                 <div>Price: {{ formatPrice(property.price_ksh) }}</div>
                 <router-link to= '/contact' class="flex bg-orange-500 text-black w-[40%] h-[35px] items-center justify-center cursor-pointer hover:bg-orange-600 transition-colors">
                   {{ property.listing_type === 'for sale' ? 'Buy Now' : 'Rent Now' }}
