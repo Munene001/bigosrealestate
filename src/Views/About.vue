@@ -15,9 +15,9 @@ import Upperfoot from '../components/Upperfoot.vue';
     </div>
     <div class="w-full py-[20px]">
 <div class="grid grid-flow-row gap-[30px] place-items-center md:grid-cols-3 md:px-[20px]">
-<Mission title = "Our Mission" description = "To deliver exceptional, trustworthy, and innovative real estate solutions while building lasting partnerships across Kenya and beyond, ensuring every client experiences personalized service marked by integrity, professionalism, and an unwavering commitment to excellence."iconName = "covid:transmission-virus-human-infected"/>
-<Mission title = "Our Vision" description = "To become the leading force in personalized real estate solutions across Kenya and beyond by setting benchmarks in integrity, innovation, and service quality, creating lasting value and trusted relationships that make every client feel fundamentally empowered and connected" iconName = "ooui:vision-simulator"/>
-<Mission title = "Our Goal" description = "To empower individuals and investors by connecting them with reliable, high-quality real estate opportunities, fostering trust, long-term value, and meaningful partnerships through personalized service and a deep commitment to excellence in Kenya’s dynamic property market."  iconName = "clarity:bullseye-line"/> 
+<Mission title = "Our Mission" description = "To deliver exceptional, trustworthy, and innovative real estate solutions while building lasting partnerships across Kenya and beyond, ensuring every client experiences personalized service marked by integrity, professionalism, and an unwavering commitment to excellence."iconName = "simple-icons:blueprint"/>
+<Mission title = "Our Vision" description = "To become the leading force in personalized real estate solutions across Kenya and beyond by setting benchmarks in integrity, innovation, and service quality, creating lasting value and trusted relationships that make every client feel fundamentally empowered and connected" iconName = "ic:baseline-real-estate-agent"/>
+<Mission title = "Our Goal" description = "To empower individuals and investors by connecting them with reliable, high-quality real estate opportunities, fostering trust, long-term value, through personalized service and a deep commitment to excellence in Kenya’s dynamic property market."  iconName = "famicons:hammer-sharp"/> 
 </div>
 </div>
 

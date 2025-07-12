@@ -39,9 +39,9 @@
       </router-link>
       <router-link
         class="text-[14px] leading-[14px] font-semibold no-underline font-montserrat  text-white"
-        to="/development"
+        to="/blog"
       >
-        DEVELOPMENTS
+        BLOGS
       </router-link>
       <router-link
         class="text-[14px] leading-[14px] font-semibold no-underline font-montserrat  text-white"
@@ -113,9 +113,9 @@
       </router-link>
       <router-link @click="togglePopup"
         class="flex h-[55px] text-[18px] leading-[18px] font-semibold no-underline font-montserrat  border-b border-gray-400 items-center"
-        to="/development"
+        to="/blog"
       >
-        DEVELOPMENTS
+        BLOGS
       </router-link>
       <router-link @click="togglePopup"
         class="flex h-[55px] text-[18px] leading-[18px] font-semibold no-underline font-montserrat  border-b border-gray-400 items-center"

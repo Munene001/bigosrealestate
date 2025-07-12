@@ -1,147 +1,55 @@
 <template>
-  <div class="flex-col md:flex hidden bg-[#130e0e] font-[Sans-serif]">
-    <div class="h-[215px] grid grid-cols-3 place-items-center text-center">
-      <div class="flex- flex-col gap-[20px]">
-        <div class="text-[20px] font-normal leading-[32px] text-white mb-[8px]">
-          BIGOS REAL ESTATE
-        </div>
-        <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-          Kilimani Mullholland drive
-        </div>
-        <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-          Nairobi
-        </div>
-        <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-          Info@bigosrealestate
-        </div>
-        <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-          0726551880
-        </div>
-      </div>
-      <div class="flex- flex-col gap-[20px]">
-        <div class="text-[20px] font-normal leading-[32px] text-white mb-[8px]">
-          COMPANY
-        </div>
-        <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-          About US
-        </div>
-        <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-          Services
-        </div>
-        <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-          Contact
-        </div>
-        <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-          News
-        </div>
-      </div>
-      <div class="flex- flex-col gap-[20px]">
-        <div class="text-[20px] font-normal leading-[32px] text-white mb-[8px]">
-          EXPLORE
-        </div>
-        <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-          FOR SALE
-        </div>
-        <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-          FOR RENT
-        </div>
-        <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-          NEWS
-        </div>
-        <router-link
-          to="/dashboard"
-          class="text-[16px] font-normal leading-[25px] text-[#f97316]"
-          >DASHBOARD</router-link
-        >
-      </div>
-    </div>
-    <div class="flex flex-row justify-center mb-[30px] gap-[4px]">
-      <Icon icon="mdi:linkedin" style="color: white" />
-      <Icon icon="mdi:facebook" style="color: white" />
-      <Icon icon="mdi:instagram" style="color: white" />
-    </div>
-    <div
-      class="h-[40px] text-white flex flex-row align-middle justify-center text-[Opne Sans] text-[16px] leading-[21px]"
-    >
-      Copyright <Icon icon="solar:copyright-line-duotone" /> BIGOS REAL ESTATE
-    </div>
-  </div>
+  <div class="bg-[#130e0e]  flex flex-col  text-white px-[20px] gap-[40px] py-[30px] md:py-[70px] md:items-center md:flex md:flex-row  md:pl-[20px]" id="footer"> 
 
-  <div class="flex flex-col md:hidden bg-[#130e0e] px-[10px] py-[20px] font-[Sans-serif]">
-    <div class=" flex flex-col gap-[20px]">
-      <div class="h-[215px] grid grid-cols-2 gap-[30px]">
-        <div class="flex- flex-col gap-[20px]">
-          <div
-            class="text-[20px] font-normal leading-[32px] text-white mb-[8px]"
-          >
-            BIGOS REAL ESTATE
-          </div>
-          <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-            Kilimani Mullholland drive
-          </div>
-          <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-            Nairobi
-          </div>
-          <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-            Info@bigosrealestate
-          </div>
-          <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-            0726551880
-          </div>
-        </div>
-        <div class="flex- flex-col gap-[20px]">
-          <div
-            class="text-[20px] font-normal leading-[32px] text-white mb-[8px]"
-          >
-            COMPANY
-          </div>
-          <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-            About US
-          </div>
-          <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-            Services
-          </div>
-          <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-            Contact
-          </div>
-          <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-            News
-          </div>
-        </div>
+      <div class="flex flex-col gap-[15px] flex-1">
+      <div class="flex flex-row items-center gap-[10px] ">
+          <img src = "/Qr.png" alt="logo" class="object-scale-down h-[50px] w-[50px]">
+           <div class="text-[20px] font-semibold leading-[24px]">Bigos Realestate</div>
+            
       </div>
-      <div class="items-center justify-center">
-        <div class="flex- flex-col">
-          <div
-            class="text-[20px] font-normal leading-[32px] text-white mb-[8px]"
-          >
-            EXPLORE
-          </div>
-          <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-            FOR SALE
-          </div>
-          <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-            FOR RENT
-          </div>
-          <div class="text-[16px] font-normal leading-[28px] text-[#f97316]">
-            NEWS
-          </div>
-          <router-link
-            to="/dashboard"
-            class="text-[14px] font-normal leading-[25px] text-[#f97316]"
-            >DASHBOARD</router-link
-          >
-        </div>
+        <div class="text-[Sans serif]  text-[16px] leading-[26px] font-[300]">Live where Nairobi grows. Bigos Realestate offers premium apartments in the city’s most dynamic neighborhoods—waterfront views, urban convenience, and a future-proof address.</div>
       </div>
-    </div>
-    <div class="flex flex-row justify-center mb-[30px] gap-[4px]">
-      <Icon icon="mdi:linkedin" style="color: white" />
-      <Icon icon="mdi:facebook" style="color: white" />
-      <Icon icon="mdi:instagram" style="color: white" />
-    </div>
-    <div
-      class="h-[40px] text-white flex flex-row align-middle justify-center  text-[16px] leading-[21px]"
-    >
-      Copyright <Icon icon="solar:copyright-line-duotone" /> BIGOS REAL ESTATE
-    </div>
+
+      <div class="flex flex-col gap-[15px] flex-1" id="contact">
+          <div class="text-[20px] font-semibold leading-[24px]">Contact Us</div>
+          <div class="flex flex-col gap-[5px] text-[Sans-serif]  text-[16px] leading-[26px] font-[300]">
+              <div class="flex flex-row gap-[10px]"> <span class="font-[500]">Email:</span>  <span>info@example.info.com</span></div>
+              <div class="flex flex-row gap-[10px]"><span class="font-[500]">Contact:</span> <span>+254712345678</span></div>
+              <div class="flex flex-row gap-[10px]"><span class="font-[500]">Address:</span>  <span>Yaya center,  4th flour Kilimani, Nairobi </span></div>
+
+
+
+
+
+          </div>
+      </div>
+      <div class="flex flex-col gap-[15px]">
+          <div class="text-[20px] font-semibold  flex-1 leading-[24px]">Quick Links</div>
+          <div class="flex flex-col  gap-[5px] text-[Sans serif]  text-[16px] leading-[26px] font-[300]">
+            <router-link to="/">Home</router-link>
+                <router-link to="/about">About</router-link>
+                <router-link to="/dashboard">Dashboard</router-link>
+            
+          </div>
+
+      </div>
+      <div class="flex flex-col flex-1 gap-[15px] items-center">
+          <div class="text-[20px] font-semibold leading-[24px]">Support</div>
+          <div class="flex flex-col  gap-[5px] text-[Sans serif]  text-[16px] leading-[26px] font-[300]">
+             <router-link to ="/">Home</router-link>
+              <router-link to="/buyorrent/buy">For Sale</router-link>
+                <router-link to="/buyorrent/rent">For Rent</router-link>
+                <router-link to="/contact">Reach Us</router-link>
+                
+          </div>
+
+      </div>
+      
+      
   </div>
+  <div class="h-[65px] bg-[#130e0e] text-white text-center flex items-center justify-center border-t border-gray-600"> @Copyright Name of company. All rights reserved</div>
 </template>
+<script setup>
+import Header from './Header.vue';
+const scrollTo = Header.methods.scrollTo;
+</script>

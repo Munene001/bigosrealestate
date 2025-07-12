@@ -1,6 +1,7 @@
 <template>
+  <div class="flex flex-row">
     <Headerlite />
-    <div class="p-[10px] box-border flex flex-col gap-[10px] border-b border-black">
+    <div class="p-[10px] w-[80vw] box-border flex flex-col gap-[10px] border-b border-black">
       <div class="text-orange-900 font-bold">EDIT PROPERTY</div>
       <div v-if="loading">Loading...</div>
       <div v-else-if="error" class="text-red-500">{{ error }}</div>
@@ -95,6 +96,7 @@
         <button class="block bg-orange-500 w-[50%] h-[38px] mx-auto hover:bg-transparent border-2 border-black-500" type="submit">{{ submitting ? 'Updating...' : 'Update Property' }}</button>
         <div class="block mx-auto" :class="{ 'text-green-500': !error, 'text-red-500': error }" v-if="message">{{ message }}</div>
       </form>
+    </div>
     </div>
   </template>
   

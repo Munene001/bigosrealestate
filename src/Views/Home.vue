@@ -56,17 +56,17 @@ import Upperfoot from "../components/Upperfoot.vue";
       <Bigosvalues
         title="INNOVATIVE SOLUTIONS"
         description="We use technology and strategy to simplify real estate transactions and client communication."
-        iconName="cbi:smarthome-solver"
+        iconName="game-icons:lightning-spanner"
       />
       <Bigosvalues
         title="MARKET ACCESSIBILITY"
         description="Gain access to Kenya’s finest locations through our wide-reaching, investor-friendly network."
-        iconName="icon-park-outline:weixin-market"
+        iconName="solar:key-linear"
       />
       <Bigosvalues
         title="LONG-TERM VALUE"
         description="Our listings ensure sustainable investments that grow in worth and lifestyle impact."
-        iconName="ix:longer"
+        iconName="arcticons:tapemeasure"
       />
     </div>
   </div>

@@ -1,19 +1,33 @@
 <template>
-  <div class="md:pb-[20px] md:px-[0px] py-[10px] px-[10px] flex flex-col gap-[15px]">
-    <div class="flex flex-col gap-[15px] md:flex md:flex-row bg-gray-100 md:py-[20px] md:px-[3px] md:justify-evenly">
+  <div
+    class="md:pb-[20px] md:px-[0px] py-[10px] md:py-[0px] px-[10px] flex flex-col gap-[15px]"
+  >
+    <div
+      class="flex flex-col gap-[15px] md:flex md:flex-row bg-gray-100 md:py-[20px] md:px-[3px] md:justify-evenly"
+    >
       <div class="font-[Sans-serif]">
         <select
-          class="w-full h-[47px] bg-white border border-gray-400"
+          class="w-full h-[47px] bg-orange-50 border border-gray-400"
           v-model="filters.bedrooms"
           placeholder="Bedrooms"
         >
-          <option :value="null" disabled selected hidden class="border border-b-gray-400">Bedrooms</option>
-          <option v-for="n in 10" :value="n" class="border border-b-gray-400">{{ n }}</option>
+          <option
+            :value="null"
+            disabled
+            selected
+            hidden
+            class="border border-b-gray-40"
+          >
+            Bedrooms
+          </option>
+          <option v-for="n in 10" :value="n" class="border border-b-gray-400">
+            {{ n }}
+          </option>
         </select>
       </div>
       <div class="font-[Sans-serif]">
         <select
-          class="w-full h-[47px] bg-white border border-gray-400"
+          class="w-full h-[47px] bg-orange-50 border border-gray-400"
           v-model="filters.location"
           placeholder="Location"
         >
@@ -31,7 +45,7 @@
       </div>
       <div class="font-[Sans-serif]">
         <select
-          class="w-full h-[47px] bg-white border border-gray-400"
+          class="w-full h-[47px] bg-orange-50 border border-gray-400"
           v-model="filters.bathrooms"
           placeholder="Bathrooms"
         >
@@ -44,12 +58,12 @@
           v-model.number="filters.max_price"
           type="number"
           placeholder="Maximum Price in KSH"
-          class="w-full md:w-[150px] h-[47px] border border-gray-400 p-[10px]"
+          class="w-full md:w-[150px] bg-orange-50 h-[47px] border border-gray-400 p-[10px]"
         />
       </div>
       <div class="font-[Sans-serif]">
         <select
-          class="w-full h-[47px] bg-white border border-gray-400"
+          class="w-full h-[47px] bg-orange-50 border border-gray-400"
           v-model="filters.furnished"
           placeholder="Furnished"
         >
@@ -60,31 +74,51 @@
       </div>
       <div class="font-[Sans-serif]">
         <select
-          class="w-full h-[47px] bg-white border border-gray-400"
+          class="w-full h-[47px] bg-orange-50 border border-gray-400"
           v-model="filters.construction_status"
           placeholder="Construction Status"
         >
-          <option :value="null" disabled selected hidden>Construction Status</option>
+          <option :value="null" disabled selected hidden>
+            Construction Status
+          </option>
           <option value="complete">Complete</option>
           <option value="unfinished">Unfinished</option>
         </select>
       </div>
       <div class="font-[Sans-serif]">
-        <button @click="resetFilters" class="h-[37px] md:h-[47px] px-[15px] bg-orange-500 text-black hover:bg-gray-300">Undo Filters</button>
+        <button
+          @click="resetFilters"
+          class="h-[37px] md:h-[47px] px-[15px] bg-orange-500 text-black hover:bg-gray-300"
+        >
+          Undo Filters
+        </button>
       </div>
     </div>
-    <div class="md:px-[15px]">
+    <div class="md:px-[15px] md:flex">
       <div v-if="loading">Loading....</div>
       <div v-else-if="error" class="text-red-500">{{ error }}</div>
-      <div v-else-if="properties.length === 0" class="text-[22px] font-[Sans-serif]">No properties found</div>
+      <div
+        v-else-if="properties.length === 0"
+        class="text-[22px] font-[Sans-serif]"
+      >
+        No properties found
+      </div>
 
-      <div v-else class="flex flex-col gap-[15px]">
-        <router-link to="/buyorrent/buy" v-if="!loading && !error" class="flex flex-row">
-          <Icon icon="mage:home" /><Icon icon="lsicon:right-filled" /><span class="align-middle font-light"
+      <div v-else class="flex flex-col gap-[15px] md:w-[85vw]">
+        <router-link
+          to="/buyorrent/buy"
+          v-if="!loading && !error"
+          class="flex flex-row"
+        >
+          <Icon icon="mage:home" /><Icon icon="lsicon:right-filled" /><span
+            class="align-middle font-light"
             >Apartments For Sale</span
           >
         </router-link>
-        <div v-if="!loading && !error" class="text-[35px] leading-[45px] font-bold">
+        <div
+          v-if="!loading && !error"
+          class="text-[35px] leading-[45px] font-bold"
+        >
           {{ count }} Apartments
         </div>
         <div class="flex flex-col gap-[35px]">
@@ -104,11 +138,13 @@
               />
             </div>
             <div
-              class="flex flex-col gap-[28px] md:flex md:flex-col md:justify-center w-full md:pr-[100px]"
+              class="flex flex-col gap-[28px] md:flex md:flex-col md:justify-center w-full"
             >
-              <div class="flex flex-row justify-between px-[10px] w-[full] items-center">
+              <div
+                class="flex flex-row justify-between px-[10px] w-[full] items-center"
+              >
                 <div
-                  class="font-[bodoni] px-[7px] bg-orange-500 text-[14px] md:text-[18px] leading-[28px] md:leading-[35px] font-medium text-white"
+                  class="font-[Sans-serif] px-[7px] bg-orange-500 text-[14px] md:text-[18px] leading-[28px] md:leading-[35px] font-medium text-white"
                 >
                   construction {{ property.construction_status }}
                 </div>
@@ -128,17 +164,49 @@
               <div class="flex flex-row justify-between px-[7px]">
                 <router-link
                   to="/contact"
-                  class="py-[10px] md:px-[45px] px-[32px] bg-black text-orange-500 font-medium hover:bg-transparent font-[Bodoni] text-[18px]"
+                  class="py-[10px] md:px-[45px] px-[32px] bg-black text-orange-500 font-medium hover:bg-transparent font-[Sans-serif] text-[18px]"
                   >Contact us</router-link
                 >
                 <button
                   @click="detailProperty(property.id)"
-                  class="py-[10px] md:px-[45px] px-[32px] bg-transparent border border-black hover:bg-orange-500 font-[Bodoni] text-[18px]"
+                  class="py-[10px] md:px-[45px] px-[32px] bg-transparent border border-black hover:bg-orange-500 font-[Sans-serif] text-[18px]"
                 >
                   View Details
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <div class="hidden md:block md:px-[30px] box-border w-[20vw] py-[100px]">
+        <div
+          class=" p-5 box-border flex flex-col   gap-2.5"
+        >
+          <div
+            class="text-[19px] font-semibold leading-[22.8px] text-[rgb(62,68,148)]"
+          >
+            Need Help ?
+          </div>
+          <div
+            class="text-[13px] font-normal leading-[22.1px] text-[rgb(59,59,59)]"
+          >
+            Please feel free to contact us. We will get back to you as soon as
+            possible
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon
+              icon="ic:baseline-phone"
+              width="27"
+              height="27"
+            ></Icon>
+            <div class="text-[Sans-serif]">
+              <span>+254726551880</span><br />
+              <span>+254 786189755</span><br />
+              <span>+254100974188</span>
+            </div>
+          </div>
+          <div class="text-[16px] font-normal leading-[27.2px]">
+            info@bigosrealestate.co.ke
           </div>
         </div>
       </div>

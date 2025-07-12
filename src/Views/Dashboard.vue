@@ -1,13 +1,14 @@
 ```vue
 <template>
+  <div class="flex flex-row">
   <Headerlite />
   <div
-    class="p-[10px] box-border flex flex-col gap-[10px] border-b border-black"
+    class="p-[10px] w-[80vw] box-border flex flex-col gap-[10px] border-b border-black"
   >
     <div class="text-orange-900 font-bold">POST A NEW PROPERTY</div>
     <form
       @submit.prevent="submitProperty"
-      class="flex flex-col gap-[40px] md:gap-[25px]"
+      class="flex flex-col gap-[40px] md:gap-[25px] " 
     >
       <div class="flex flex-col gap-[10px]">
         <label class="text-orange-900" for="title">Title :</label>
@@ -206,6 +207,7 @@
       {{ message }}
     </div>
   </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -344,7 +346,7 @@ const submitProperty = async () => {
     error.value = true;
     message.value = err.response?.data?.message || "Failed to post property";
     setTimeout(() => {
-      message.value = "";
+      message.value  = "";
     }, 5000);
   } finally {
     loading.value = false;

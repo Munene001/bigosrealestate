@@ -1,4 +1,5 @@
 <template>
+  <div class="flex flex-row">
   <Headerlite />
   <div class="p-[10px]">
   <div class="text-orange-900 font-bold">LISTINGS</div>
@@ -26,6 +27,7 @@
             <button class="border border-gray-500 rounded-sm text-white bg-black p-[3px] font-medium" @click="deleteProperty(property.id)">Delete</button>
         </div>
     </div>
+  </div>
   </div>
   </div>
 </template>
