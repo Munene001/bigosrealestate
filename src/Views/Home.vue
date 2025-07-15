@@ -17,7 +17,7 @@ import Upperfoot from "../components/Upperfoot.vue";
         Kenya's Hub for <span class="text-orange-500"> Real Estate </span>
       </div>
       <div
-        class="font-[] font-semibold text-[18px] leading-[28px] text-[#e9e9e7]"
+        class="md:font-[Sans-serif] font-[Bodoni] font-semibold text-[18px] leading-[28px] text-[#e9e9e7]"
       >
         We bridge investors to Kenya’s real estate market with reliability,
         innovation, and personalized alliances, delivering upscale residences

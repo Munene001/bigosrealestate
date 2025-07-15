@@ -9,25 +9,25 @@
         CONTACT<br />US
       </div>
       <div
-        class=" text-[20px] md:text-[25px] font-normal text-orange-500 leading-[38px] font-[Montserrat,sans-serif]"
+        class=" text-[20px] md:text-[25px] font-normal text-orange-500 leading-[38px] font-[Sans-serif]"
       >
         Get in touch with our experts
       </div>
     </div>
     <div class="  flex w-[full] p-[30px] mb-[20px] md:w-[100%] md:flex items-center md:p-[10px] ">
       <div class="flex flex-col border-2 rounded-sm shadow-orange-glow bg-white py-[10px] px-[20px] gap-[15px]">
-        <div class="font-[Sans-serif] text-[24px] leading-[31px] font-bold">
+        <div class="font-[Bodoni] md:font-[Sans-serif] text-[24px] leading-[31px] font-bold">
           Our Address
         </div>
         <div
-          class="font-[Sans-serif] text-[18px] leading-[25px] text-[#4d4c44]"
+          class="font-[bodoni] md:font-[Sans-serif] md:text-[18px] text-[17px] leading-[25px] text-[#4d4c44]"
         >
           Incase of any inquiries you can fill out the form below and a representative
           will contact you soon
         </div>
         <div class="flex flex-col gap-[5px]">
           <div
-            class="flex  font-[Sans-serif] flex-row font-medium items-center gap-[20px] border-2 border-black-500 p-[10px] text-[18px] leading-[30px]"
+            class="flex  md:font-[Sans-serif]  flex-row font-medium items-center gap-[20px] border-2 border-black-500 p-[10px] text-[18px] leading-[30px]"
           >
             <Icon
               icon="carbon:phone-voice"

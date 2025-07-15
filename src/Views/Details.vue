@@ -153,7 +153,7 @@ const fetchProperty = async () => {
   error.value = "";
   try {
     const response = await axios.get(
-      `http://127.0.0.1:8000/api/properties/${id}`,
+      `https://bigosrealestate.com/api/public/index.php/api/properties/${id}`,
       {
         params: {
           with_images: true,

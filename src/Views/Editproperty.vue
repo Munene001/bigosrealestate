@@ -163,7 +163,7 @@
     loading.value = true;
     error.value = '';
     try {
-      const response = await axios.get(`http://127.0.0.1:8000/api/properties/${id}`, {
+      const response = await axios.get(`https://bigosrealestate.com/api/public/index.php/api/properties/${id}`, {
         params: {
           with_images: true
         },
@@ -214,7 +214,7 @@
   const removeGalleryImage = async (image_id: number) => {
     if(!confirm("Are you sure you want to remove this image?")) return;
     try {
-      await axios.delete(`http://127.0.0.1:8000/api/images/${image_id}`);
+      await axios.delete(`https://bigosrealestate.com/api/public/index.php/api/images/${image_id}`);
       currentGalleryImages.value = currentGalleryImages.value.filter(img => img.id !== image_id);
       message.value = "Image removed successfully";
       setTimeout(() => message.value = "", 3000);
@@ -256,7 +256,7 @@
     });
 
     const response = await axios.post(
-      `http://127.0.0.1:8000/api/properties/${form.value.id}`,
+      `https://bigosrealestate.com/api/public/index.php/api/properties/${form.value.id}`,
       formData,
       {
         headers: {

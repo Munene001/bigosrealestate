@@ -28,12 +28,12 @@
           <div class="flex flex-col  gap-[5px] text-[Sans serif]  text-[16px] leading-[26px] font-[300]">
             <router-link to="/">Home</router-link>
                 <router-link to="/about">About</router-link>
-                <router-link to="/dashboard">Dashboard</router-link>
+                <router-link :to="{ path: '/dashboard', hash: '#dashboard'}"   @click.native="scrollAfterNavigation">Dashboard</router-link>
             
           </div>
 
       </div>
-      <div class="flex flex-col flex-1 gap-[15px] items-center">
+      <div class="flex flex-col flex-1 gap-[15px] md:items-center">
           <div class="text-[20px] font-semibold leading-[24px]">Support</div>
           <div class="flex flex-col  gap-[5px] text-[Sans serif]  text-[16px] leading-[26px] font-[300]">
              <router-link to ="/">Home</router-link>
@@ -52,4 +52,15 @@
 <script setup>
 import Header from './Header.vue';
 const scrollTo = Header.methods.scrollTo;
+const scrollAfterNavigation = () => {
+  nextTick(() => {
+    const el = document.getElementById('dashboard');
+    if (el) {
+      el.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start' // or 'center', 'end', 'nearest'
+      });
+    }
+  });
+};
 </script>

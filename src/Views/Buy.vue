@@ -298,7 +298,7 @@ const fetchProperties = async () => {
     let response;
     if (!hasFilters.value) {
       response = await axios.get<ApiResponse>(
-        `http://127.0.0.1:8000/api/properties`,
+        `https://bigosrealestate.com/api/public/index.php/api/properties`,
         {
           params: {
             with_images: true,
@@ -309,7 +309,7 @@ const fetchProperties = async () => {
       );
     } else {
       response = await axios.post<ApiResponse>(
-        `http://127.0.0.1:8000/api/search`,
+        `https://bigosrealestate.com/api/public/index.php/api/search`,
         cleanFilters(filters.value),
         {
           headers: {

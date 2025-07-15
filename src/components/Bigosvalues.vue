@@ -5,12 +5,12 @@
     <Icon :icon="iconName" style="color: #f97316; font-size: 35px" />
     <div class="flex flex-col gap-[8px]">
       <div
-        class="font-[Sans-serif] text-[20px] font-semibold leading-[22px] text-white"
+        class="font-[Sans-serif] md:text-[20px] text-[19px] font-semibold leading-[22px] text-white"
       >
         {{ title }}
       </div>
       <div
-        class=" text-[17px] font-medium leading-[22px] text-white"
+        class=" md:text-[17px] text-[16px] font-medium leading-[22px] text-white"
       >
         {{ description }}
       </div>

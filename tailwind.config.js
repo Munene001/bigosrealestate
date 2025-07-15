@@ -4,8 +4,8 @@ module.exports = {
     theme: {
       extend: {
         backgroundImage:{
-          'homer': "url('/Homefont.jpg')",
-          'homerdos' :"url('/Homefont2.jpg')"
+          'homer': "url('/Homefont.webp')",
+          'homerdos' :"url('/Homefont2.webp')"
 
         },
         animation: {

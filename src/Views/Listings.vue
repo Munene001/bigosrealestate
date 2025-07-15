@@ -82,7 +82,7 @@ const fetchProperties = async () => {
   loading.value = true;
   error.value = "";
   try {
-    const response = await axios.get<ApiResponse>(`http://127.0.0.1:8000/api/properties`, {
+    const response = await axios.get<ApiResponse>(`https://bigosrealestate.com/api/public/index.php/api/properties`, {
       params:{
         with_images:true
       },
@@ -107,7 +107,7 @@ const deleteProperty = async (id: number) => {
   loading.value = true;
   error.value = "";
   try {
-    await axios.delete(`http://127.0.0.1:8000/api/properties/${id}`, {
+    await axios.delete(`https://bigosrealestate.com/api/public/index.php/api/properties/${id}`, {
       headers: {
         Accept: "application/json",
       },

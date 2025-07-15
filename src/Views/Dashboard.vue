@@ -1,6 +1,6 @@
 ```vue
 <template>
-  <div class="flex flex-row">
+  <div class="flex flex-row" id="dashboard">
   <Headerlite />
   <div
     class="p-[10px] w-[80vw] box-border flex flex-col gap-[10px] border-b border-black"
@@ -310,7 +310,7 @@ const submitProperty = async () => {
     });
 
     const response = await axios.post(
-      "http://127.0.0.1:8000/api/properties",
+      "https://bigosrealestate.com/api/public/index.php/api/properties",
       formData,
       {
         headers: {

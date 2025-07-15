@@ -24,12 +24,12 @@ import Upperfoot from '../components/Upperfoot.vue';
 <div class="bg-black px-[20px] md:px-[60px] md:py-[75px] box-border text-[#E0DFD9] flex flex-col gap-[40px] py-[60px]">
     <div class=" text-[24px] font-bold leading-[26px] text-center md:text-[32px] md:leading-[35px]">Founded in the year 2025, our firm pioneers smart, client-first real estate solutions, blending local insight with modern innovation to transform property experiences across Kenya and beyond.</div>
     <div class="w-full flex flex-col gap-[35px] md:flex-row" >
-    <div class="text-[18px]  font-medium leading-[25px] font-[Sans-serif] ">
+    <div class="md:text-[18px]   text-[17px] leading-[25px] md:font-[Sans-serif]  font-[Montserrat] md:text-start text-center">
         <p>The company was founded with Kenya’s spirit at its heart, drawing inspiration from the country’s dynamic growth and cultural richness. With years of professional experience in property development, we are committed to shaping Kenya’s real estate landscape through innovative design, responsible development, and strategic market insight. Our foundation is built on the understanding of local needs and the belief that real estate is not just about buildings, but about creating meaningful spaces where people thrive.</p> <br>
         <p>We provide the Kenyan market with a unique blend of modern architecture, strong ethical values, and personalized service. Our vision for excellence is guided by a client-first approach, where integrity, trust, and consistent delivery are key pillars. Through our lifestyle-driven developments, we aim to raise living standards and deliver lasting value for homeowners, investors, and communities across Kenya. Our reputation is rooted in reliability, timely execution, and a deep understanding of the real estate cycle within the Kenyan context.</p> <br>
         <p>“Today, we confidently tell our clients to expect more,” says the CEO. “Our team brings together years of combined expertise, and we’ve already delivered hundreds of high-quality homes to satisfied clients across the country.” As a proudly Kenyan brand, we remain committed to long-term impact and responsible growth, ensuring each project reflects our dedication to quality, client satisfaction, and a shared vision for the future of real estate in Kenya.</p>
     </div>
-    <img src="/Homefont.jpg" alt="building" class="h-[410px] w-[full] object-cover "/>
+    <img src="/Homefont.webp" alt="building" class="h-[410px] w-[full] object-cover " loading="lazy"/>
     </div>
    
 </div>
